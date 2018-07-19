@@ -12,34 +12,31 @@
 // getfile("data.json",function(text) {
 //   var data = JSON.parse(text);
 //   console.log(data);
-// details(data.basics);
-// career(data.Careerobjective);
-// education(data.education);
-// skills(data.skills);
+  // details(data.basics);
+  // career(data.Careerobjective);
+  // education(data.education);
+  // skills(data.skills);
+  // achievements(data.achievements)
 // })
-
 function loadjson(file){
   return new Promise((resolve,reject)=>{
     return fetch(file).then(response=>{
-     if(response.ok){
-       resolve(response.json());
-     }
-     else{
-       reject(new error);
-     }
-})
-})
+      if(response.ok){
+        resolve(response.json());
+      }else{
+        reject(new error('error'));
+      }
+    })
+  })
 }
-var newfile=loadjson("data.json");
+var newfile = loadjson("data.json");
 newfile.then(data=>{
   details(data.basics);
   career(data.Careerobjective);
   education(data.education);
   skills(data.skills);
+  achievements(data.achievements)
 })
-
-
-
 var child = document.querySelector(".childone");
 function details(det){
   var img = document.createElement("img");
@@ -55,18 +52,18 @@ function details(det){
   mail.href = "mailto:hellosmiley.143@gmail.com"
   mail.textContent = det.email;
   child.appendChild(mail);
-  var address = document.createElement("h3");
+  var address = document.createElement("h4");
   address.textContent = "Address";
   child.appendChild(address);
   var address = document.createElement("hr");
   child.appendChild(address);
-  var address = document.createElement("h2");
+  var address = document.createElement("h4");
   address.textContent = det.address;
   child.appendChild(address);
 }
 var child2 = document.querySelector(".childtwo");
 function career(careerinfo){
-  var address = document.createElement("h3");
+  var address = document.createElement("h2");
   address.textContent = "Career Objective";
   child2.appendChild(address);
   var address = document.createElement("hr");
@@ -103,13 +100,26 @@ function skills(tech){
   child2.appendChild(tec);
   var hr = document.createElement("hr");
   child2.appendChild(hr);
-  var skilldata=document.createElement("table");
-  skilldata.border="1";
+  var skilldata = document.createElement("table");
+  skilldata.border = "1";
   child2.appendChild(skilldata);
   tabledata="";
-  for(i=0;i<tech.length;i++)
-  {
-    tabledata+="<tr><td>"+tech[i].title+"<tr<td>"+tech[i].data;
+  for(i=0;i<tech.length;i++){
+    tabledata+="<tr><td>"+tech[i].title+"</td><td>"+tech[i].data+"</td></tr>";
   }
-skilldata.innerHTML=tabledata;
+  skilldata.innerHTML = tabledata;
+  }
+function achievements(ac){
+  var ach = document.createElement("h2");
+  ach.textContent ="Achievements";
+  child2.appendChild(ach);
+  var hr = document.createElement("hr");
+  child2.appendChild(hr);
+  for(i=0;i<ac.length;i++){
+    var ache = document.createElement("ul");
+    var ache1 = document.createElement("li");
+    ache1.textContent = ac[i].data;
+    ache.appendChild(ache1);
+    child2.appendChild(ache);
+  }
 }

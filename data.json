@@ -1,12 +1,12 @@
 {"basics":{
   "image":"female.png",
-  "name":"Yogitha",
-  "phoneno":"9491359688",
+  "name":"yogitha",
+  "phoneno":"+9112345678",
   "email":"yogithasruthi@gmail.com",
   "address":"SRKR Engineering College,Bhimavaram"
 },
 "Careerobjective":{
-  "info":"The objective area of your resume is an opportunity to connect to the hiring manager, or human resources office, by clearly stating the job/career that you want. You will also make their job easier and will appreciate the clarity "
+  "info":""
 },
 "education":[{
   "degree":"B.Tech",
@@ -15,12 +15,12 @@
 },
 {
   "degree":"Intermediate",
-  "institute":"Sasi jnr clg",
+  "institute":"Sasi JNR collage ",
   "data":["2014-2016","95.8%"]
 },
 {
   "degree":"SSC",
-  "institute":"kkr",
+  "institute":"KKR",
   "data":["2014","9.7"]
 }
 ],
@@ -35,5 +35,14 @@
 {
   "title":"Operating Systems",
   "data":["Linux","Windows","MAC","ubuntu"]
-  }]
+  }],
+  "achievements":[{
+    "data":"Received 9 certification in IMMO."
+    },
+  {
+    "data":"codemaster."
+    },
+  {
+    "data":"cisco."
+    }]
 }
